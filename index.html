@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/27650c92d8.js" crossorigin="anonymous"></script>
+    <title>My Portfolio</title>
+</head>
+<body>
+
+    <!-- Header section -->
+
+    <div class="header">
+        <div class="container">
+            <nav>
+                <span><span id="j">J</span>ayant.</span>
+                <ul id="sideMenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="openMenu()"></i>
+            </nav>
+            <div class="header_txt">
+                <h1>Hi, I'm <span>Jayant</span><br>Mahajan</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- About section -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="images/profile.jpg" alt="">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I'm a fresher of B.Tech Computer Science Engineering with good programming skills and always excited to learn new technologies.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills', event)">Skills</p>
+                        <p class="tab-links" onclick="openTab('certificates', event)">Certificates</p>
+                        <p class="tab-links" onclick="openTab('education',event)">Education</p>    
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Object Oriented Programming</span><br>C++</li>
+                            <li><span>Frontend Development</span><br>HTML, CSS & JavaScript</li>
+                            <li><span>Frontend Libraries</span><br>React.js and Bootstrap</li>
+                            <li><span>RedHat/Linux</span><br>RHCSA</li>    
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="certificates">
+                        <ul>
+                            <li><span>FreeCodeCamp</span><br>JavaScript Algorithms and Data Structures</li>
+                            <li><span>FreeCodeCamp</span><br>Front End Development Libraries Certification</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>8.91 CGPA</span><br>Deogiri Institute Of Engineering And Management Studies,<br> Aurangabad <span class="year">2023</span></li>
+                            <li><span>68.77%</span><br>Dnyanopasak Junior College,<br>Parbhani <span class="year">2019</span></li>
+                            <li><span>88.40%</span><br>Bal Vidya Mandir,<br>Parbhani <span class="year">2017</span></li>
+                        </ul>
+                    </div>
+
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <!-- My projects -->
+
+    <div id="projects">
+        <div class="container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="projects-list">
+                <div>
+                    <img src="images/ML.jpg" alt="">
+                    <h2>Language Translator</h2>
+                    <p>It is a ML model provided with a dataset where
+                        there is translation of one language into another
+                        language.
+                    </p>
+                </div>
+                <div>
+                    <img src="images/R.png" alt="">
+                    <h2>Sentiment Analysis</h2>
+                    <p>Project made using R language. The model takes
+                        the WhatsApp chat text file as input and shows the
+                        graphs of sentiments like joy, sad, angry, etc.
+                    </p>
+                </div>
+                <div>
+                    <img src="images/portfolio.jpg" alt="">
+                    <h2>Portfolio Site</h2>
+                    <p>Portfolio site made with HTML, CSS and JavaScript.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact -->
+
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class="sub-title">Contact Me</h1>
+                    <p><i class="fa-solid fa-paper-plane"></i>jayantmahajan99@gmail.com</p>
+                    <p><i class="fa-solid fa-square-phone"></i>+91-9923362749</p>
+                    <div class="social-icons">
+                        <a href="https://z-p4.www.instagram.com/jay._mahajan/"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/jayant-mahajan-1689411b0/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://github.com/mahajanjay"><i class="fa-brands fa-github"></i></i></a>
+                    </div>
+                    <a href="images/Jayant Sudhir Mahajan.pdf" download class="btn">Download CV</a>
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="Your name" required>
+                        <input type="text" name="Email" placeholder="Your Email" required>
+                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                        <button class="btn" type="submit">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright @ Jayant</p>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbziK1LDC2WTPfx1G2zIkd8qanIvvcGfMlSziFft_AFRU6-QZ4AP4AxjomeS85KCT1lHhw/exec'
+        const form = document.forms['submit-to-google-sheet'];
+        const msg = document.getElementById('msg');
+
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        msg.innerHTML = "Message sent successfully."
+        setTimeout(function(){
+            msg.innerHTML = ''
+        }, 5000)
+        form.reset()
+      })
+      .catch(error => console.error('Error!', error.message))
+    })
+
+    </script>
+
+</body>
+</html>
